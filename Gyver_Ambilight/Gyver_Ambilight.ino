@@ -4,14 +4,16 @@
    2017
 */
 //----------------------НАСТРОЙКИ-----------------------
-#define NUM_LEDS 98        // число светодиодов в ленте
-#define DI_PIN 13          // пин, к которому подключена лента
+#define NUM_LEDS 98          // число светодиодов в ленте
+#define DI_PIN 13            // пин, к которому подключена лента
 
-#define start_flashes 0    // проверка цветов при запуске (1 - включить, 0 - выключить)
+#define start_flashes 0      // проверка цветов при запуске (1 - включить, 0 - выключить)
 
-#define auto_bright 0      // автоматическая подстройка яркости от уровня внешнего освещения (1 - включить, 0 - выключить)
-#define max_bright 150     // максимальная яркость (0 - 255)
-#define min_bright 10      // минимальная яркость (0 - 255)
+#define auto_bright 0        // автоматическая подстройка яркости от уровня внешнего освещения (1 - включить, 0 - выключить)
+#define max_bright 255       // максимальная яркость (0 - 255)
+#define min_bright 50        // минимальная яркость (0 - 255)
+#define bright_constant 500  // константа усиления от внешнего света (0 - 1023)
+// чем МЕНЬШЕ константа, тем "резче" будет прибавляться яркость
 //----------------------НАСТРОЙКИ-----------------------
 
 int new_bright;
@@ -42,10 +44,10 @@ void setup()
 
 void loop() {
   if (auto_bright) {                         // если включена адаптивная яркость
-    if (millis() - bright_timer > 500) {     // каждые полсекунды
+    if (millis() - bright_timer > 100) {     // каждые 100 мс
       bright_timer = millis();               // сброить таймер
-      new_bright = map(analogRead(6), 0, 1000, min_bright, max_bright);   // считать показания с фоторезистора, перевести диапазон
-      constrain(new_bright, min_bright, max_bright);
+      new_bright = map(analogRead(6), 0, bright_constant, min_bright, max_bright);   // считать показания с фоторезистора, перевести диапазон
+      new_bright = constrain(new_bright, min_bright, max_bright);
       LEDS.setBrightness(new_bright);        // установить новую яркость
     }
   }
