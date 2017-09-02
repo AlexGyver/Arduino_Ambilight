@@ -12,7 +12,7 @@
 - **Test pictures** - папка с ядрёными радугами для теста подсветки
 
 ## Схема подключения
-![СХЕМА](https://github.com/AlexGyver/MoneyBox_counter/blob/master/scheme1.jpg)
+![СХЕМА](https://github.com/AlexGyver/Arduino_Ambilight/blob/master/Schemes/pc.jpg)
 
 ##  Материалы и компоненты
 Если товар закончился, то почти всё указанное ниже можно найти здесь http://alexgyver.ru/arduino_shop/ или здесь http://alexgyver.ru/electronics/
