@@ -1,6 +1,7 @@
+[![AlexGyver YouTube](http://alexgyver.ru/git_banner.jpg)](https://www.youtube.com/channel/UCgtAOyEQdAyjvm9ATCi_Aig?sub_confirmation=1)
 # Arduino_Ambilight
 Динамическая фоновая подсветка для монитора компьютера с адаптивной яркостью
-Подробности в видео: 
+Подробности в видео: https://youtu.be/tx5GxvFgkh0
 
 ## Папки
 
