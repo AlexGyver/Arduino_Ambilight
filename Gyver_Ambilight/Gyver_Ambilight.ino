@@ -13,10 +13,11 @@
 #define max_bright 255       // максимальная яркость (0 - 255)
 #define min_bright 50        // минимальная яркость (0 - 255)
 #define bright_constant 500  // константа усиления от внешнего света (0 - 1023)
+#define bright_coef 0.01
 // чем МЕНЬШЕ константа, тем "резче" будет прибавляться яркость
 //----------------------НАСТРОЙКИ-----------------------
 
-int new_bright;
+int new_bright, new_bright_f;
 unsigned long bright_timer;
 #define serialRate 115200  // скорость связи с ПК
 uint8_t prefix[] = {'A', 'd', 'a'}, hi, lo, chk, i;  // кодовое слово Ada для связи
@@ -48,7 +49,8 @@ void loop() {
       bright_timer = millis();               // сброить таймер
       new_bright = map(analogRead(6), 0, bright_constant, min_bright, max_bright);   // считать показания с фоторезистора, перевести диапазон
       new_bright = constrain(new_bright, min_bright, max_bright);
-      LEDS.setBrightness(new_bright);        // установить новую яркость
+      new_bright_f = new_bright_f * bright_coef + new_bright * (1 - bright_coef);
+      LEDS.setBrightness(new_bright_f);      // установить новую яркость
     }
   }
 
