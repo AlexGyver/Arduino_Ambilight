@@ -9,16 +9,17 @@
 
 #define start_flashes 0      // проверка цветов при запуске (1 - включить, 0 - выключить)
 
-#define auto_bright 0        // автоматическая подстройка яркости от уровня внешнего освещения (1 - включить, 0 - выключить)
+#define auto_bright 1        // автоматическая подстройка яркости от уровня внешнего освещения (1 - включить, 0 - выключить)
 #define max_bright 255       // максимальная яркость (0 - 255)
 #define min_bright 50        // минимальная яркость (0 - 255)
 #define bright_constant 500  // константа усиления от внешнего света (0 - 1023)
 // чем МЕНЬШЕ константа, тем "резче" будет прибавляться яркость
-#define bright_coef 0.01     // коэффициент фильтра, чем меньше - тем медленнее меняется яркость
+#define coef 0.9             // коэффициент фильтра (0.0 - 1.0), чем больше - тем медленнее меняется яркость
 //----------------------НАСТРОЙКИ-----------------------
 
 int new_bright, new_bright_f;
 unsigned long bright_timer;
+
 #define serialRate 115200  // скорость связи с ПК
 uint8_t prefix[] = {'A', 'd', 'a'}, hi, lo, chk, i;  // кодовое слово Ada для связи
 #include <FastLED.h>
@@ -49,7 +50,7 @@ void loop() {
       bright_timer = millis();               // сброить таймер
       new_bright = map(analogRead(6), 0, bright_constant, min_bright, max_bright);   // считать показания с фоторезистора, перевести диапазон
       new_bright = constrain(new_bright, min_bright, max_bright);
-      new_bright_f = new_bright_f * bright_coef + new_bright * (1 - bright_coef);
+      new_bright_f = new_bright_f * coef + new_bright * (1 - coef);
       LEDS.setBrightness(new_bright_f);      // установить новую яркость
     }
   }
