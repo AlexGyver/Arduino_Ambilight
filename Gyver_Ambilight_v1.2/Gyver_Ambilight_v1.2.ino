@@ -49,7 +49,7 @@ void setup()
 void check_connection() {
   if (led_state) {
     if (millis() - off_timer > (OFF_TIME * 1000)) {
-      led_state = !led_state;
+      led_state = false;
       FastLED.clear();
       FastLED.show();
     }
