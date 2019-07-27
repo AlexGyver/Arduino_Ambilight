@@ -18,9 +18,9 @@
 ##  Материалы и компоненты
 Если товар закончился, то почти всё указанное ниже можно найти здесь http://alexgyver.ru/arduino_shop/ или здесь http://alexgyver.ru/electronics/
 
-* Arduino NANO http://ali.pub/1sun6b
-* Лента http://ali.pub/1sun73
-* БЕЗПАЕЧНЫЕ УГЛОВЫЕ СОЕДИНИТЕЛЯ ДЛЯ ЛЕНТЫ!!! http://ali.pub/22lb00
+* Arduino NANO http://ali.ski/RmSLa  http://ali.ski/YxFLo
+* Лента http://ali.ski/u9oTZ  http://ali.ski/tsroLX
+* БЕЗПАЕЧНЫЕ УГЛОВЫЕ СОЕДИНИТЕЛИ ДЛЯ ЛЕНТЫ!!! http://ali.ski/AMpzu
 * Мощный БП http://ali.pub/1sunn8  http://ali.pub/1sun82  http://ali.pub/1sunol
 * Фоторезисторы http://ali.pub/1suna7
 * Резисторы ЧипДип 10 кОм https://www.chipdip.ru/product0/41486
