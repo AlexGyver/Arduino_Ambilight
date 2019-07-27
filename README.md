@@ -21,8 +21,8 @@
 * Arduino NANO http://ali.ski/RmSLa  http://ali.ski/YxFLo
 * Лента http://ali.ski/u9oTZ  http://ali.ski/tsroLX
 * БЕЗПАЕЧНЫЕ УГЛОВЫЕ СОЕДИНИТЕЛИ ДЛЯ ЛЕНТЫ!!! http://ali.ski/AMpzu
-* Мощный БП http://ali.pub/1sunn8  http://ali.pub/1sun82  http://ali.pub/1sunol
-* Фоторезисторы http://ali.pub/1suna7
+* Мощный БП http://ali.ski/0-DaRp  http://ali.ski/iGiJA  http://ali.ski/t9P6O
+* Фоторезисторы http://ali.ski/o5cN8
 * Резисторы ЧипДип 10 кОм https://www.chipdip.ru/product0/41486
 * Резисторы ЧипДип 300 Ом https://www.chipdip.ru/product0/29794
 
