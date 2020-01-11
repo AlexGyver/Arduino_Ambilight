@@ -18,10 +18,29 @@
 ##  Материалы и компоненты
 Если товар закончился, то почти всё указанное ниже можно найти здесь http://alexgyver.ru/arduino_shop/ или здесь http://alexgyver.ru/electronics/
 
-* Arduino NANO http://ali.ski/RmSLa  http://ali.ski/YxFLo
-* Лента http://ali.ski/u9oTZ  http://ali.ski/tsroLX
+* Arduino NANO 328p – искать
+* https://ali.ski/tI7blh
+* https://ali.ski/O4yTxb
+* https://ali.ski/6_rFIS
+* https://ali.ski/gb92E-
+* Giant4 (Россия)
+* Адресная лента
+* https://ali.ski/crrqi1
+* https://ali.ski/2I3be
+* Купить в РФ, 60 свет/метр, 30 свет/метр
+* Black PCB / White PCB – цвет подложки ленты, чёрная / белая. В видео была чёрная
+* 1m/5m – длина ленты в метрах (чтобы заказать 2 метра, берите два заказа 1m, очевидно)
+* 30/60/74/96/100/144 – количество светодиодов на 1 метр ленты. В видео использовалась лента 60 диодов на метр
+* IP30 лента без влагозащиты (как на видео)
+* IP65 лента покрыта силиконом
+* IP67 лента полностью в силиконовом коробе
+* Постфикс ECO – лента чуть более низкого качества, меньше меди, на длинной ленте будет сильно проседать яркость
 * БЕЗПАЕЧНЫЕ УГЛОВЫЕ СОЕДИНИТЕЛИ ДЛЯ ЛЕНТЫ!!! http://ali.ski/AMpzu
-* Мощный БП http://ali.ski/0-DaRp  http://ali.ski/iGiJA  http://ali.ski/t9P6O
+* БП 5V Али искать (минимум 3A на каждые 100 LED)
+* https://ali.ski/DItEG
+* https://ali.ski/t3YFfU
+* Мощные https://ali.ski/7Jg69
+* Мощные https://ali.ski/NGDrjQ
 * Фоторезисторы http://ali.ski/o5cN8
 * Резисторы ЧипДип 10 кОм https://www.chipdip.ru/product0/41486
 * Резисторы ЧипДип 300 Ом https://www.chipdip.ru/product0/29794
