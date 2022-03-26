@@ -91,7 +91,7 @@ waitLoop: while (!Serial.available()) check_connection();;
   }
 
   memset(leds, 0, NUM_LEDS * sizeof(struct CRGB));
-  for (uint8_t i = 0; i < NUM_LEDS; i++) {
+  for (int i = 0; i < NUM_LEDS; i++) {
     byte r, g, b;
     // читаем данные для каждого цвета
     while (!Serial.available()) check_connection();
