@@ -10,6 +10,7 @@
 #define start_flashes 0      // проверка цветов при запуске (1 - включить, 0 - выключить)
 
 #define auto_bright 1        // автоматическая подстройка яркости от уровня внешнего освещения (1 - включить, 0 - выключить)
+#define auto_bright_pin A6   // пин, к которому подключён фоторезистор
 #define max_bright 255       // максимальная яркость (0 - 255)
 #define min_bright 50        // минимальная яркость (0 - 255)
 #define bright_constant 500  // константа усиления от внешнего света (0 - 1023)
@@ -48,7 +49,7 @@ void loop() {
   if (auto_bright) {                         // если включена адаптивная яркость
     if (millis() - bright_timer > 100) {     // каждые 100 мс
       bright_timer = millis();               // сброить таймер
-      new_bright = map(analogRead(6), 0, bright_constant, min_bright, max_bright);   // считать показания с фоторезистора, перевести диапазон
+      new_bright = map(analogRead(auto_bright_pin), 0, bright_constant, min_bright, max_bright);   // считать показания с фоторезистора, перевести диапазон
       new_bright = constrain(new_bright, min_bright, max_bright);
       new_bright_f = new_bright_f * coef + new_bright * (1 - coef);
       LEDS.setBrightness(new_bright_f);      // установить новую яркость
