@@ -12,6 +12,7 @@
 #define START_FLASHES 0      // проверка цветов при запуске (1 - включить, 0 - выключить)
 
 #define AUTO_BRIGHT 1        // автоматическая подстройка яркости от уровня внешнего освещения (1 - включить, 0 - выключить)
+#define INVERSE_PHOTORESIST 0 // инверсия значений фоторезистора для резисторов типа GL5537, у которых сопротивление темноты больше сопротивления освещенности (1 - включить, 0 - выключить)
 #define MAX_BRIGHT 255       // максимальная яркость (0 - 255)
 #define MIN_BRIGHT 50        // минимальная яркость (0 - 255)
 #define BRIGHT_CONSTANT 500  // константа усиления от внешнего света (0 - 1023)
@@ -62,7 +63,13 @@ void loop() {
   if (AUTO_BRIGHT) {                         // если включена адаптивная яркость
     if (millis() - bright_timer > 100) {     // каждые 100 мс
       bright_timer = millis();               // сброить таймер
-      new_bright = map(analogRead(6), 0, BRIGHT_CONSTANT, MIN_BRIGHT, MAX_BRIGHT);   // считать показания с фоторезистора, перевести диапазон
+      if (INVERSE_PHOTORESIST) {
+        new_bright = map(analogRead(6), 0, BRIGHT_CONSTANT, MAX_BRIGHT, MIN_BRIGHT);   // считать показания с фоторезистора, перевести диапазон        
+      }
+      else
+      {
+        new_bright = map(analogRead(6), 0, BRIGHT_CONSTANT, MIN_BRIGHT, MAX_BRIGHT);   // считать показания с фоторезистора, перевести диапазон
+      }
       new_bright = constrain(new_bright, MIN_BRIGHT, MAX_BRIGHT);
       new_bright_f = new_bright_f * COEF + new_bright * (1 - COEF);
       LEDS.setBrightness(new_bright_f);      // установить новую яркость
